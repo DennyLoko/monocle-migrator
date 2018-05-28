@@ -1,0 +1,16 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__.'/vendor/autoload.php';
+
+use Migrator\MonocleMigrator;
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Input\ArgvInput;
+
+$app = new Application('monocle-migrator', '1.0.0');
+$cmd = new MonocleMigrator();
+
+$app->add($cmd);
+
+$app->setDefaultCommand($cmd->getName(), true);
+$app->run(new ArgvInput());

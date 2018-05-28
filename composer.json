@@ -1,0 +1,33 @@
+{
+    "name": "dennyloko/monocle-migrator",
+    "description": "A tool which helps migrate your data between Postgres <-> MySQL",
+    "type": "project",
+    "license": "MIT",
+    "homepage": "https://github.com/dennyloko/monocle-migrator",
+    "keywords": [
+        "pokemongo", "pokemon-go", "monocle", "database", "mysql", "postgres"
+    ],
+    "support": {
+        "issues": "https://github.com/dennyloko/monocle-migrator/issues",
+        "source": "https://github.com/dennyloko/monocle-migrator"
+    },
+    "autoload": {
+        "psr-4": {
+            "Migrator\\": "./src/"
+        }
+    },
+    "require": {
+        "php": ">=7.1.0",
+        "catfan/medoo": "^1.5",
+        "symfony/console": "^4.0",
+        "symfony/yaml": "^4.0"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "@composer dump-autoload -o"
+        ],
+        "post-update-cmd": [
+            "@composer dump-autoload -o"
+        ]
+    }
+}
